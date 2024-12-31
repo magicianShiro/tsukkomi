@@ -1,0 +1,29 @@
+---
+import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro';
+import FixedBackground from '../components/FixedBackground.astro'
+
+type Props = HeadProps
+
+const { ...head } = Astro.props
+
+---
+
+<!doctype html>
+<html lang="zh" class="dark antialiased break-words">
+	<head>
+		<BaseHead {...head} />
+	</head>
+	<body class="bg-main text-main">
+    <div class="flex flex-col min-h-screen px-0 md:px-8">
+      <!-- <FixedBackground /> -->
+      <div class="md:py-12 md:pb-32 py-0">
+        <main
+          class="grow w-full max-w-2xl mx-auto bg-compare p-8 md:p-12 min-h-screen md:min-h-[90vh] relative"
+        >
+          <slot />
+        </main>
+      </div>
+    </div>
+
+	</body>
+</html>
