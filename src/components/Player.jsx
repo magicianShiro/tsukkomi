@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { APlayer } from "aplayer-react";
 import "aplayer-react/dist/index.css";
 import axios from "axios";
@@ -34,9 +34,17 @@ export default function Player(props) {
   }, [musicList])
 
 	return (
-    playList.length > 0 ? <APlayer
+    // playList.length > 0 ? <APlayer
+    //   audio={playList}
+    //   autoPlay
+    // /> : null
+    <React.Fragment>
+    {
+        playList.length > 0 ? <APlayer
       audio={playList}
       autoPlay
     /> : null
+    }
+    </React.Fragment>
   )
 }
